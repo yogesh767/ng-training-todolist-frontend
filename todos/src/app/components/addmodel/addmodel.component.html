@@ -1,0 +1,44 @@
+<div class="outer">
+    <h2 mat-dialog-title>New Task</h2>
+    <hr>
+    <mat-dialog-content>
+        <form #addtodoForm="ngForm" (ngSubmit)="addTodos(addtodoForm.value)">
+            <div class="mb-3 item">
+                <label cLabel for="assigned_to"><span>*</span>Assigned To</label>
+                <input cFormControl ngModel name="assigned_to" placeholder="Assigned to" type="text" />
+            </div>
+            <div class="mb-3 item">
+                <label cLabel for="status"><span>*</span>Status</label>
+                <select ngModel name="status" aria-label="Default select example" cSelect>
+                    <option selected>In Progress</option>
+                    <option>Completed</option>
+                    <option>Not Started</option>
+                </select>
+            </div>
+            <div class="mb-3 item" id="item3">
+                <label cLabel for="due_date"> Due Date</label>
+                <input ngModel type="date" name="due_date" cFormControl>
+            </div>
+            <div class="mb-3 item" id="item3">
+                <label cLabel for="due_date"> Priority</label>
+                <select ngModel name="priority">
+                    <option selected>Normal</option>
+                    <option>Low</option>
+                    <option>High</option>
+                </select>
+            </div>
+            <div class="mb-3 item" id="item4">
+                <label for="comments"> Comments</label>
+                <input ngModel name="comments">
+            </div>
+
+            <div class="mb-3 item buttons">
+                <mat-dialog-actions>
+                    <button mat-button mat-dialog-close class="cencel">Cancel</button>
+                    <button mat-raised-button mat-button mat-dialog-clos class="save"> Save</button>
+                </mat-dialog-actions>
+            </div>
+
+        </form>
+    </mat-dialog-content>
+</div>

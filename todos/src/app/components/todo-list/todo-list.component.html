@@ -1,0 +1,58 @@
+<div class="todos">
+    <app-header></app-header>
+    <div class="main-div">
+        <div class="title">
+            <div class="left">
+                <img src="assets/list.png" class="list-icon">
+                <div>
+                    <div class="top">Tasks</div>
+                    <div class="bottom">All tasks</div>
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="top">
+                    <div class="p-3" (click)="showAddDialog()">New Task</div>
+                    <div class="w-100">|</div>
+                    <div class="p-3" (click)="gettodos()">Refresh</div>
+                </div>
+                <div class="bottom ">
+                    <input placeholder="Search">
+                    <img src="assets/search.png" class="searchIcon">
+                </div>
+            </div>
+        </div>
+        <div class="table">
+            <table>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th >Assigned to</th>
+                    <th>Status</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Comment</th>
+
+                </tr>
+                <tr *ngFor="let todos of todoList">
+                    <td><input type="checkbox"></td>
+                    <td class="assginedto">{{todos.assigned_to}}</td>
+                    <td>{{todos.status}}</td>
+                    <td>{{todos.due_date}}</td>
+                    <td>{{todos.priority}}</td>
+                    <td>{{todos.comments}} <img src="assets/downarrow.svg"  mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="width:18px">
+                          <mat-menu #menu="matMenu" class="blue">
+                            <button mat-menu-item (click)="showupdateDialog(todos)">
+                              <span>Edit</span>
+                            </button>
+                            <button mat-menu-item (click)="deleteTodo(todos.id)">
+                              <span>Delete</span>
+                            </button>
+                          </mat-menu>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+<!-- <button (click)="addTodos()"> open dialog</button> -->

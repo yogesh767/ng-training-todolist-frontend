@@ -1,0 +1,57 @@
+.outer {
+    border: 3px solid #bdbdbd;
+    height: 100%;
+}
+
+form {
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px !important;
+}
+
+.item {
+    display: flex;
+}
+
+.item span {
+    color: red;
+}
+
+.item label {
+    width: 40% !important;
+}
+
+.item input,
+select {
+    border: 1px solid #bdbdbd;
+    width: 60% !important;
+}
+
+#item4 input {
+    border: 1px solid #bdbdbd;
+    height: 64px;
+}
+
+.buttons {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: right;
+}
+
+.buttons button {
+    padding: 3px;
+    margin-right: 10px;
+}
+.cencel{
+    background-color: #ffe7a7;
+    color: #949d8e;
+    border: none;
+    padding: 5px;
+
+}
+.save{
+    background-color: #949d8e;
+    color: #ffe7a7;
+    border: none;
+    padding: 5px;
+}

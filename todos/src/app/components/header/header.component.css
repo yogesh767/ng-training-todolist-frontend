@@ -1,0 +1,11 @@
+.header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.svg{
+    width: 20%;
+}
+.engime-logo{
+    width: 20%;
+}
